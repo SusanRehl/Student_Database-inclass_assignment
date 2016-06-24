@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app = 'myApp'>
+ <head>
+   <meta charset="utf-8">
+   <title>prime_peer_db_01</title>
+   <script src="vendors/angular.min.js" type="text/javascript"></script>
+   <script src="scripts/script.js" type="text/javascript"></script>
+ </head>
+ <body>
+   <h1> Assignment Dashboard </h1>
+   <div ng-controller = 'assignmentController'>
+     <h2> Add Assignment </h2>
+   <input type= "text" ng-model= "studentNameBinder" value= "" placeholder="student name" required>
+   <input type= "text" ng-model= "scoreBinder" value= "" placeholder="score" required>
+   <input type= "text" ng-model= "assnNumBinder" value= "" placeholder="assignment number" required>
+   <button type="button" name="button" ng-click= "addAssignment()" >Submit</button>
+   <h2>Display Assignments</h2>
+   <button type="button" name="button" ng-click= "getAssignments()" >Display All</button>
+   <ul>
+     <li ng-repeat='record in allTheAssignments'>Student Name: {{ record.student_name}}  Assignment Number: {{ record.assignment_number}}  Score: {{ record.score}}</li>
+   </div>
+ </body>
+</html>
